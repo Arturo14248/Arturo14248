@@ -64,4 +64,4 @@ Before my first pipeline, I studied economics and government. I built a housing-
 
 ## Say hi
 
-[LinkedIn](https://www.linkedin.com/in/YOUR-HANDLE) or [arturodemian@gmail.com](mailto:arturodemian@gmail.com). Hablo español, I speak English, et je me débrouille en français.
+[LinkedIn](https://www.linkedin.com/in/arturo-demian-garcia-nepomuceno) or [arturodemian@gmail.com](mailto:arturodemian@gmail.com). Hablo español, I speak English, et je me débrouille en français.
