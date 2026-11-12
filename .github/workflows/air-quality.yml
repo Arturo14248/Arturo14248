@@ -2,17 +2,24 @@ name: Update air quality
 
 on:
   schedule:
-    - cron: "17 */6 * * *" # every six hours, off the top of the hour
+    - cron: "17 */6 * * *" # every six hours
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-air-quality-main
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -22,8 +29,21 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
         run: python3 scripts/update_air.py
 
-      - name: Commit if it changed
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff --quiet README.md || (git commit -am "Update Monterrey air reading" && git push)
+
+          if git diff --quiet -- README.md; then
+            echo "No README change; skipping commit."
+            exit 0
+          fi
+
+          git add README.md
+          git commit -m "Update Monterrey air reading"
+
+          # Bring in remote changes before pushing
+          git pull --rebase origin main
+
+          # Push the rebased commit
+          git push origin HEAD:main
