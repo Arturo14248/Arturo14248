@@ -1,0 +1,29 @@
+name: Update air quality
+
+on:
+  schedule:
+    - cron: "17 */6 * * *" # every six hours, off the top of the hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch reading and rewrite README
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python3 scripts/update_air.py
+
+      - name: Commit if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (git commit -am "Update Monterrey air reading" && git push)
