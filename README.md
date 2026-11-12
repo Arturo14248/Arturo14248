@@ -28,7 +28,7 @@ I build the pipelines that move data from where it's produced to where someone c
 ## Monterrey air
 
 <!-- AIR:START -->
-> Waiting on the first reading. Run the "Update air quality" workflow once and this line fills in.
+> **PM1 at 25.1 µg/m³** at the Monterrey, Centro station, measured 11 Nov 2026, 23:00 local time. Station data via [OpenAQ](https://openaq.org).
 <!-- AIR:END -->
 
 A small scheduled job in this repo fetches that number and rewrites the line, so this page is a (very) small pipeline too. See [`scripts/update_air.py`](scripts/update_air.py).
