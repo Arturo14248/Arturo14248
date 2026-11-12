@@ -44,7 +44,9 @@ Before my first pipeline, I studied economics and government. I built a housing-
 ## Off the clock
 
 - World news and markets, usually before the workday starts.
-- Music, most of the time I'm working. <!-- TODO: name what you're listening to lately -->
+- Music, most of the time I'm working. Lately it swings between The Beatles and Charli XCX.
+
+<img src="assets/on-rotation.svg" width="420" alt="A spinning record beside the words 'on rotation', switching between The Beatles and Charli xcx.">
 - Reading *Fluent Python*, slowly and properly.
 - I tutored math, statistics, and programming through university, and I'd like to teach again.
 
