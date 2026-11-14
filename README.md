@@ -33,7 +33,7 @@ I build the pipelines that move data from where it's produced to where someone c
 ## Monterrey air
 
 <!-- AIR:START -->
-> **PM1 at 5.4 µg/m³** at the Monterrey, Centro station, measured 14 Nov 2026, 07:00 local time. Station data via [OpenAQ](https://openaq.org).
+> **PM1 at 27.8 µg/m³** at the Monterrey, Centro station, measured 14 Nov 2026, 16:00 local time. Station data via [OpenAQ](https://openaq.org).
 <!-- AIR:END -->
 
 A small scheduled job in this repo fetches that number and rewrites the line, so this page is a (very) small pipeline too. See [`scripts/update_air.py`](scripts/update_air.py).
